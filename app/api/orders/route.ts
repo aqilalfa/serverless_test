@@ -4,8 +4,8 @@ import { createClient } from "@supabase/supabase-js"
 // Kita inisialisasi Supabase client khusus untuk API (Server-side)
 // Idealnya menggunakan service_role_key jika ingin membypass RLS, tapi untuk pengujian ini 
 // kita bisa gunakan anon key karena RLS sudah "Allow all for demo"
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder_key'
 const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 export async function GET() {
